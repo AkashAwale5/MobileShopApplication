@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<a th:href="@{/index}">Home</a><br>
+<form th:"#" th:action="@{/updateBill}" th:object="${updatebill}" method="post">
+<input type="hidden" th:field="*{bilNo}">
+<input type="hidden" th:field="*{price}">
+<input type="hidden" th:field="*{finalPrice}">
+<input type="hidden" th:field="*{salePrice}">
+<input type="hidden" th:field="*{itemName}">
+<input type="hidden" th:field="*{custPhone}">
+<input type="hidden" th:field="*{custAddress}">
+<input type="hidden" th:field="*{quantity}">
+
+<p>
+Enter Customer Name
+<input type="text" th:field="*{custName}"></p>
+
+<p>
+Date
+<input type="text" th:field="*{billDate}"></p>
+
+<p>
+Enter salesman
+<input type="text" th:field="*{saleName}"></p>
+
+<p>
+Enter total value
+<input type="text" th:field="*{totalValue}"></p>
+<button type="submit" > Update Bill</button>
+
+</form>
+</body>
+</html>

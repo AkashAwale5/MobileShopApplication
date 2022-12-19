@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body bgcolor="skyblue">
+<a th:href="@{/}">Home</a><br>
+<form action="#" th:action="@{/generateBill}" th:object="${stock}" method="POST">
+<input type="hidden" th:field="*{price}"  name="price" />
+<p>
+Customer Name
+<input type="text" name="custName"/>
+</p>
+<p>
+Customer Address
+<input type="text" name="custAddress"/>
+</p>
+<p>
+Customer Phone
+<input type="text" name="custPhone"/>
+</p>
+<p>
+Item Name
+<input type="text" th:field="*{itemName}"  name="itemName" /><br>
+</p>
+<p>
+Item Quantity
+<input type="text" name="quantity"/>
+</p>
+<p>
+Item Price(MRP)
+<input type="text" th:field="*{salePrice}" name="salePrice" /><br>
+</p>
+<p>
+Final Price
+<input type="text" name="finalPrice"/>
+</p>
+<p>
+Sale Name
+<input type="text" name="saleName"/>
+</p>
+<input type="submit" value="save"/>
+</form>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body bgcolor="lightyellow">
+<form action="#" th:action="@{/saveOffer}" th:object="${offers}" method="get">
+    <h1>Enter Offer Details Here.....</h1>
+    <table align="center">
+    <tr>
+    <td>Item Name:</td>
+    <td><input type="text" th:field="*{itemName}" placeholder="Mobile"/></td>
+   </tr>           
+    <tr>
+    <td>Enter Discount</td>
+    <td><input type="text" th:field="*{discount}" placeholder="10"/></td>
+   </tr>
+   <tr>
+    <td>Enter Last Date of offer</td>
+    <td><input type="text"  placeholder="2000-01-01"  th:field="*{lastDate}"/></td>
+    </tr>
+    <tr>
+    <td>Enter price</td>
+    <td><input type="text"  placeholder="100" th:field="*{price}" value="0"/></td>
+    </tr>
+     <tr>
+    <td>Enter Gift</td>
+    <td><input type="text"  placeholder="headphone" th:field="*{gift}"/></td>
+    </tr>
+   <tr>
+   <td colspan="5" ><input type="submit" value="save"/></td>      
+    </tr>                         
+    </table>
+    </form>
+</body>
+</html>

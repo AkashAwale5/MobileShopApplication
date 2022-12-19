@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body bgcolor="powderblue">
+<a href="index">Back</a>
+<h1 align="center" >Usernames and Passwords,,,</h1>
+<table align="center" border="1" cellpadding="5" cellspacing="5">
+<tr>
+<th>ID</th>
+<th>UserName</th>
+<th>Active</th>
+<th>Password</th>
+<th>Role</th>
+</tr>
+<tr th:each="objst:${ulist}">
+<td><span th:text="${objst.id}" ></span></td>
+<td><span th:text="${objst.userName}" ></span></td>
+<td><span th:text="${objst.active}" ></span></td>
+<td><span th:text="${objst.password}"></span></td>
+<td><span th:text="${objst.roles}"></span></td>
+</tr>
+</table>
+
+</body>
+</html>

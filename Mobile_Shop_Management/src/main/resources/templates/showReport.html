@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body bgcolor="lightgrey" >
+<a href="index">Home</a><br> 
+<a href="salereport">Back</a>
+<h1 align="center">Sale Report between <span th:text="${startdate}" ></span> and <span th:text="${enddate}"></span></h1>
+<h2 align="center">Total Sale =<span th:text="${totalprice}"></span></h2>
+<h3 align="center">Total profit=<span th:text="${profit}"></span> Total Loss=<span th:text="${loss}"></span></h3>
+
+<table border="1" align="center">
+<tr>
+<th>Bill No</th>
+<th>Customer Name</th>
+<th>Item Name</th>
+<th>Purchase Price</th>
+<th>Sale Price</th>
+<th>Total Value</th>
+<th>Sales Exec</th>
+</tr>
+<tr th:each="objst:${blist}">
+<td><span th:text="${objst.bilNo}"></span></td>
+<td><span th:text="${objst.custName}"></span></td>
+<td><span th:text="${objst.itemName}"></span></td>
+<td><span th:text="${objst.price}"></span></td>
+<td><span th:text="${objst.finalPrice}"></span></td>
+<td><span th:text="${objst.totalValue}"></span></td>
+<td><span th:text="${objst.saleName}"></span></td>
+
+</table>
+</body>
+</html>

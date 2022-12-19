@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body bgcolor="powdergreen">
+<h1>Update Offer Details,,,,</h1>
+<form action="#" th:action="@{/updatOffer}" th:object="${offer}" method="POST">       
+            <input type="hidden" th:field="*{id}" />
+            <p> Enter Item Name
+            <input type="text"  id="itemName" th:field="*{itemName}">
+			<span class="alert alert-danger" th:if="${#fields.hasErrors('itemName')}" th:errors="*{itemName}"></span>					
+            </p>
+            
+            <p> Enter Discount
+           <!-- <input type="text" th:field="*{company}" ><br></p> --> 
+           <input type="text"  id="discount" th:field="*{discount}">
+			<span class="alert alert-danger" th:if="${#fields.hasErrors('discount')}" th:errors="*{discount}"></span>					
+            </p>
+           
+            <p>Enter Price   
+            <!--<input type="text" th:field="*{price}" ><br></p> --> 
+           <input type="text"  id="price" th:field="*{price}">
+			<span class="alert alert-danger" th:if="${#fields.hasErrors('price')}" th:errors="*{price}"></span>					
+            </p>
+             <p>Enter Last Date   
+            <!--<input type="text" th:field="*{price}" ><br></p> --> 
+            <input type="text"  id="lastDate" th:field="*{lastDate}">
+			 </p>
+            <p>Enter Gift           
+            <!-- <input type="text" th:field="*{salePrice}"><br></p>    --> 
+           <input type="text"  id="gift" th:field="*{gift}">
+			<span class="alert alert-danger" th:if="${#fields.hasErrors('gift')}" th:errors="*{gift}"></span>					
+            </p>            
+            <button type="submit" > Update Offer</button>
+        </form>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"/>
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
+
+<style>
+table {
+font-family: arial, sans-serif;
+border-collapse: collapse;
+width: 60%;
+}
+
+
+
+td, th {
+border: 1px solid #000000;
+text-align: left;
+padding: 6px;
+}
+
+
+
+tr:nth-child(even) {
+background-color: #dddddd;
+}
+</style>
+</head>
+<body bgcolor="lightgreen">
+
+<table align="center" border="1" cellpadding="5" cellspacing="5">
+<tr>
+<th>Id</th>
+<th>Item name</th>
+<th>Company </th>
+<th>Quantity</th>
+<th>Price</th>
+<th>Sale</th>
+<th>Add</th>
+</tr>
+<tr th:each="objst:${ilist}">
+<td><span th:text="${objst.itemId}"></span></td>
+<td><span th:text="${objst.itemName}"></span></td>
+<td><span th:text="${objst.company}"></span></td>
+<!--  <td><span th:text="${objst.quantity}"></span></td> -->
+
+<td>
+    <span th:if="${objst.quantity == '0'}" th:text="Out of Stock"></span>
+    <span th:unless="${objst.quantity == '0'}" th:text="${objst.quantity}"></span>
+</td>
+
+<td><span th:text="${objst.salePrice}"></span></td>
+<!--  <td><a th:href="@{/saleItem/{id}(id=${objst.itemId})}">Sale</a> -->
+<td><a th:href="@{/saleItem/{id}(id=${objst.itemId})}" class="btn btn-success"> <i class="fa fa-arrow-circle-o-left"></i>Sale</a>
+</td>
+<td><a th:href="@{/updateItem/{id}(id=${objst.itemId})}">Add</a>
+
+
+
+
+</tr>
+</table>
+
+</body>
+</html>

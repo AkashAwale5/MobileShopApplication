@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body bgcolor="pink">
+<a th:href="@{/index}">Home</a><br>
+<a th:href="@{/showStock}">Back</a><br>
+<font size="10" >Current Present Stock by Sale Price </font>
+<font color="red" size="11" ><span th:text="${totalprice}"></span></font><br>
+<table align="center" border="1" cellpadding="5" cellspacing="5">
+<tr>
+<th>Id</th>
+<th>Item name</th>
+<th>Company </th>
+<th>Quantity</th>
+<th>Price</th>
+<th>Total</th>
+</tr>
+<tr th:each="objst:${ilist}">
+<td><span th:text="${objst.itemId}"></span></td>
+<td><span th:text="${objst.itemName}"></span></td>
+<td><span th:text="${objst.company}"></span></td>
+<td><span th:text="${objst.quantity}"></span></td>
+<td><span th:text="${objst.salePrice}"></span></td>
+<td><span th:text="${objst.totalSalePrice}"></span></td>
+</tr>
+</table>
+</body>
+</html>

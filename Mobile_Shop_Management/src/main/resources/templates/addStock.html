@@ -1,0 +1,40 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+
+    <body style="background-color:powderblue;">
+    
+    <form action="#" th:action="@{/saveItem}" th:object="${stock}" method="get">
+    <h1>Enter Items Details Here.....</h1>
+    <table align="center">
+    <tr>
+    <td>Item Name:</td>
+    <td><input type="text" th:field="*{itemName}" placeholder="Mobile"/></td>
+    <td class="alert alert-danger" th:if="${#fields.hasErrors('itemName')}" th:errors="*{itemName}"></td>
+    </tr>           
+    <tr>
+    <td>Company Name</td>
+    <td><input type="text" name="company" th:field="*{company}" placeholder="apple"/></td>
+    <td class="alert alert-danger" th:if="${#fields.hasErrors('company')}" th:errors="*{company}"></td>
+   </tr>
+   <tr>
+    <td>Enter Quantity</td>
+    <td><input type="text" name="quantity" placeholder="1"  th:field="*{quantity}"/></td>
+    <td class="alert alert-danger" th:if="${#fields.hasErrors('quantity')}" th:errors="*{quantity}"></td>
+   </tr>
+    <tr>
+    <td>Enter price</td>
+    <td><input type="text" name="price" placeholder="100" th:field="*{price}" value="0"/></td>
+    <td class="alert alert-danger" th:if="${#fields.hasErrors('price')}" th:errors="*{price}"></td>
+   </tr>
+     <tr>
+    <td>Enter salePrice</td>
+    <td><input type="text" name="salePrice" th:field="*{salePrice}" placeholder="140"  value="0"></td>
+    <td class="alert alert-danger" th:if="${#fields.hasErrors('salePrice')}" th:errors="*{salePrice}"></td>
+   </tr>
+   <tr>
+   <td colspan="5" ><input type="submit" value="save"/></td>      
+    </tr>                         
+    </table>
+    </form>
+    </body>
+</html>

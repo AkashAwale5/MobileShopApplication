@@ -1,0 +1,55 @@
+
+<html xmlns:th="http://www.thymeleaf.org">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+<body   style="background-color:lightpink;">
+<a href="index">Back</a>
+<h1 align="center">Enter Employee Details here</h1>
+
+<form action="#" th:action="@{/saveEmployee}" th:object="${employee}" method="get" >
+<table align="center">
+<tr>
+<td>Enter Full Name</td>
+<td><input type="text" placeholder="john deo" th:field="*{name}"></td>
+<td class="alert alert-danger" th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></td>
+</tr>
+<tr>
+<td>Enter Address</td>
+<td><input type="text" placeholder="mumbai" th:field="*{address}"></td>
+<td class="alert alert-danger" th:if="${#fields.hasErrors('address')}" th:errors="*{address}"></td>
+</tr>
+
+<tr>
+<td>Enter Phone No</td>
+<td><input type="text" placeholder="987654321" th:field="*{phoneno}"></td>
+<td class="alert alert-danger" th:if="${#fields.hasErrors('phoneno')}" th:errors="*{phoneno}"></td>
+</tr>
+
+<tr>
+<td>Enter Role</td>
+<td><input type="text" placeholder="sale" th:field="*{role}"></td>
+<td class="alert alert-danger" th:if="${#fields.hasErrors('role')}" th:errors="*{role}"></td>
+</tr>
+
+<tr>
+<td>Enter Birth date</td>
+<td><input type="text" placeholder="2000-01-01" th:field="*{dob}">(YY-MM-DD)</td>
+</tr>
+
+<tr>
+<td>Enter Joining Date</td>
+<td><input type="text" placeholder="2020-01-01" th:field="*{joinDate}">(YY-MM-DD)</td>
+</tr>
+<tr>
+<td>Enter Salary</td>
+<td><input type="text" placeholder="10000" name="salary" value="0"></td>
+<td class="alert alert-danger" th:if="${#fields.hasErrors('salary')}" th:errors="*{salary}"></td>
+</tr>
+<tr>
+<td><button type="submit" >Save</button></td>
+</tr>
+</table>
+</form>
+
+
+</body>
+</html>

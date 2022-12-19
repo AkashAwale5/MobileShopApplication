@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<a th:href="@{/index}">Home</a><br>
+<table align="center" border="1" cellpadding="5" cellspacing="5">
+<tr>
+<th>Bill No</th>
+<th>Date</th>
+<th>Customer Name</th>
+<th>Purchase Price</th>
+<th>Total Value</th>
+<th>Sales Man</th>
+<th>delete</th>
+<th>Update</th>
+</tr>
+<tr th:each="objst:${transaction}">
+<td><span th:text="${objst.bilNo}"></span></td>
+<td><span th:text="${objst.billDate}"></span></td>
+<td><span th:text="${objst.custName}"></span></td>
+<td><span th:text="${objst.price}"></span></td>
+<td><span th:text="${objst.totalValue}"></span></td>
+<td><span th:text="${objst.saleName}"></span></td>
+<td><a th:href="@{/deleteBill/{id}(id=${objst.bilNo})}">delete</a>
+<td><a th:href="@{/updateBill/{id}(id=${objst.bilNo})}">Update</a>
+</tr>
+</table>
+
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+
+</head>
+<body>
+<h1>Add the Stock</h1>
+<form action="#" th:action="@{/updateStock}" th:object="${stock}" method="POST">
+
+            <!-- Add hidden form field to handle update -->
+            <input type="hidden" th:field="*{itemId}" />
+            <p> Enter Item Name
+        <!-- <input type="text" th:field="*{itemName}" ><br></p> -->
+            
+            <input type="text"  id="itemName" th:field="*{itemName}">
+			<span class="alert alert-danger" th:if="${#fields.hasErrors('itemName')}" th:errors="*{itemName}"></span>					
+            </p>
+            
+            <p> Enter Company
+           <!-- <input type="text" th:field="*{company}" ><br></p> --> 
+           <input type="text"  id="company" th:field="*{company}">
+			<span class="alert alert-danger" th:if="${#fields.hasErrors('company')}" th:errors="*{company}"></span>					
+            </p>
+            
+             <p> Before Stock
+            <input type="text" th:field="*{quantity}"  disabled="disabled"><br></p>
+            <p> Enter Quantity
+            
+            <!-- <input type="text" name="quantity" ><br></p> --> 
+           <input type="text"  id="quantity" name="quantity" value="0">
+			<span class="alert alert-danger" th:if="${#fields.hasErrors('quantity')}" th:errors="*{quantity}"></span>					
+            </p>
+            <p>Enter Price
+            
+            <!--<input type="text" th:field="*{price}" ><br></p> --> 
+           <input type="text"  id="price" th:field="*{price}">
+			<span class="alert alert-danger" th:if="${#fields.hasErrors('price')}" th:errors="*{price}"></span>					
+            </p>
+            <p>sale price
+            
+            <!-- <input type="text" th:field="*{salePrice}"><br></p>    --> 
+           <input type="text"  id="salePrice" th:field="*{salePrice}">
+			<span class="alert alert-danger" th:if="${#fields.hasErrors('salePrice')}" th:errors="*{salePrice}"></span>					
+            </p>            
+            <button type="submit" > Update Item</button>
+        </form>
+</body>
+</html>

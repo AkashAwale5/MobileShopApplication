@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<style>
+table {
+font-family: arial, sans-serif;
+border-collapse: collapse;
+width: 80%;
+}
+
+
+
+td, th {
+border: 1px solid #000000;
+text-align: left;
+padding: 8px;
+}
+
+
+
+tr:nth-child(even) {
+background-color: #dddddd;
+}
+</style>
+</head>
+<body align="center">
+<form>
+<table border="1" align ="center" >
+<th>Bill No</th>
+<th>Bill date</th>
+<th>Customer</th>
+<th>Address</th>
+<th>Item Name</th>
+<th>Quantity</th>
+<th>MRP</th>
+<th>Final Price</th>
+<th>Total Value</th>
+<th>Sale Exec</th>
+<th>View</th>
+</tr>
+<tr th:each="objst:${allbill}">
+<td><span th:text="${objst.bilNo}"></span></td>
+<td><span th:text="${objst.billDate}"></span></td>
+<td><span th:text="${objst.custName}"></span></td>
+<td><span th:text="${objst.custAddress}"></span></td>
+<td><span th:text="${objst.itemName}"></span></td>
+<td><span th:text="${objst.quantity}"></span></td>
+<td> <span th:text="${objst.salePrice}"></span></td>
+<td><span th:text="${objst.finalPrice}"></span></td>
+<td><span th:text="${objst.totalValue}"></span></td>
+<td><span th:text="${objst.saleName}"></span></td>
+<td><a th:href="@{/viewBill/{id}(id=${objst.bilNo})}">View</a></td>
+
+</tr>
+</table>
+</form>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<form  th:object="${bills}" method="POST" > 
+<table align="center" cellpadding="5" cellspacing="5">    
+            <tr>     
+            <td>Bill No:</td>
+            <td> <span th:text="*{bilNo}"></span></td>
+            </tr>
+            <tr>
+            <td>Date : </td>
+            <td> <span th:text="*{billDate}"></span></td>
+            </tr>
+            <tr><td>Customer Name:</td>
+            <td><span th:text="*{custName}"></span></td>
+            </tr>
+            <tr>
+            <td>Customer Phone:</td>
+            <td><span th:text="*{custPhone}"></span></td></p>
+            </tr>
+            <tr>
+            <td>Customer Address:</td>
+            <td><span th:text="*{custAddress}"></span></td></tr>         
+            <tr>
+            <td>Item Name:</td>
+            <td><span th:text="*{itemName}"></span></td></tr>              
+            <tr>
+            <td>Quantity:</td>
+            <td><span th:text="*{quantity}"></span></td></tr>        
+            <tr><td>MRP   :  </td>      
+            <td><span th:text="*{salePrice}"></span></td></tr>
+            <tr><td>sale price :</td>
+            <td><span th:text="*{finalPrice}"></span></td></tr>
+            <tr> <td>Total :</td>
+            <td><span th:text="*{totalValue}"></span></td></tr> 
+            <tr><td> Sales Executive :</td>
+            <td> <span th:text="*{saleName}"></span></td></tr>  
+            </table>          
+        </form>
+</body>
+</html>

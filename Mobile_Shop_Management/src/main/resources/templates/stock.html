@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>User Registration</title>
+</head>
+<body bgcolor="skyblue">
+<form action="#" th:action="@{/saveItem}" method="get">
+<h1>Enter Items Details Here.....</h1>
+ <table align="center">
+   <tr>
+    <td>Item Name</td>
+    <td><input type="text" name="itemName"/></td>   
+   </tr>
+   <tr>
+    <td>Company Name</td>
+    <td><input type="text" name="company"/></td>
+   </tr>
+   <tr>
+    <td>Enter Quantity</td>
+    <td><input type="text" name="quantity"/></td>
+   </tr>
+    <tr>
+    <td>Enter price</td>
+    <td><input type="text" name="price"/></td>
+   </tr>
+     <tr>
+    <td>Enter salePrice</td>
+    <td><input type="text" name="salePrice" ></td>
+   </tr>
+   <tr><td colspan="2" ><input type="submit" value="save"/></td></tr>
+ </table>
+ </form>
+</body>
+</html>

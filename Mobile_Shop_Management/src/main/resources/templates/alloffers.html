@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"/>
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
+
+<style>
+table {
+font-family: arial, sans-serif;
+border-collapse: collapse;
+width: 60%;
+}
+
+
+
+td, th {
+border: 1px solid #000000;
+text-align: left;
+padding: 6px;
+}
+
+
+
+tr:nth-child(even) {
+background-color: #dddddd;
+}
+</style>
+</head>
+<body>
+<h1 align="center">All Offers Currently on going,,,,,</h1>
+<table align="center" border="1" cellpadding="5" cellspacing="5">
+<tr>
+<th>Id</th>
+<th>Item name</th>
+<th>Discount</th>
+<th>Last Date</th>
+<th>Price</th>
+<th>Gift</th>
+<th>Update</th>
+<th>Delete</th>
+</tr>
+<tr th:each="objst:${alloffer}">
+<td><span th:text="${objst.id}"></span></td>
+<td><span th:text="${objst.itemName}"></span></td>
+<td><span th:text="${objst.discount}"></span></td>
+<td><span th:text="${objst.lastDate}"></span></td>
+<td><span th:text="${objst.price}"></span></td>
+<td><span th:text="${objst.gift}"></span></td>
+<td><a th:href="@{/updateoffer/{id}(id=${objst.id})}">Update</a> 
+<td><a th:href="@{/deleteoffer/{id}(id=${objst.id})}">Delete</a>
+</tr>
+</table>
+</body>
+</html>
